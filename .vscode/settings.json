@@ -6,8 +6,7 @@
   "editor.insertSpaces": false,
   "files.associations": {
     "main.h": "c",
-    "function_pointers.h": "c",
-    "lists.h": "c"
+    "function_pointers.h": "c"
   },
   "cSpell.words": [
     "alph",

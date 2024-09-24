@@ -1,7 +1,9 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+/* To define type of dprintf */
 #define _GNU_SOURCE
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -41,25 +43,26 @@ typedef struct instruction_s
 /**
  * struct stack_vars - stack variables
  * @top: top item
- * @rear: rear item
+ * @buff: buffer for each line per file
+ * @command: array consisting of command and its argument
+ * @stream: file stream
  */
 
 typedef struct stack_vars
 {
 	stack_t *top;
-	stack_t *rear;
+	char *buff;
+	char **command;
+	FILE *stream;
 } sv;
 
 extern sv STACK;
-extern char *command[2] = {NULL, NULL};
-extern FILE *data_stream;
-extern char *data_per_line;
 
 /* File Operations */
 FILE *read_file(char *name);
-void tokenize(void);
+void tokenize(char *buff, char **command);
 
 /* Data Structures  */
-void init_stack_data(void);
+void init_stack_data(FILE *stream);
 
 #endif

@@ -1,5 +1,6 @@
 #include "monty.h"
-#include <stdio.h>
+
+sv STACK = {NULL, NULL, NULL, NULL};
 /**
  * main - monty entry point
  * @argc: argument count
@@ -7,11 +8,13 @@
  * Return: EXIT_SUCCESS or EXIT_FAILURE
  */
 
-int main(int argc, char const *argv[])
+int main(int argc, char **argv)
 {
 	FILE *file;
-	ssize_t size;
+	size_t size;
 	int line;
+	char *command[2] = {NULL, NULL};
+	char *buff;
 
 	if (argc != 2)
 	{
@@ -20,12 +23,16 @@ int main(int argc, char const *argv[])
 	}
 
 	file = read_file(argv[1]);
-	init_stack_data();
+	STACK.stream = file;
 
-	while (getline(&data_per_line, size, file) != -1)
+	while (getline(&buff, &size, file) != -1)
 	{
+		STACK.buff = buff;
 		line++;
-		tokenize();
+		tokenize(buff, command);
+		STACK.command = command;
+
+		printf("%d: %s\n", line, buff);
 	}
 	return (0);
 }
