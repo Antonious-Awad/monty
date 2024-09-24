@@ -1,0 +1,22 @@
+{
+  "C_Cpp.clang_format_fallbackStyle": "Visual Studio",
+  "editor.suggest.insertMode": "insert",
+  "editor.comments.insertSpace": false,
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": false,
+  "files.associations": {
+    "main.h": "c",
+    "function_pointers.h": "c",
+    "lists.h": "c"
+  },
+  "cSpell.words": [
+    "alph",
+    "diagsums",
+    "dlistint",
+    "dnodeint",
+    "listint",
+    "nodeint",
+    "strtow",
+    "wildcmp"
+  ]
+}
