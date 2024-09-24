@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <string.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -37,7 +38,28 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct stack_vars - stack variables
+ * @top: top item
+ * @rear: rear item
+ */
+
+typedef struct stack_vars
+{
+	stack_t *top;
+	stack_t *rear;
+} sv;
+
+extern sv STACK;
+extern char *command[2] = {NULL, NULL};
+extern FILE *data_stream;
+extern char *data_per_line;
+
 /* File Operations */
 FILE *read_file(char *name);
+void tokenize(void);
+
+/* Data Structures  */
+void init_stack_data(void);
 
 #endif

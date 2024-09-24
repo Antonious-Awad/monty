@@ -1,8 +1,20 @@
 {
-  "ALX Snippet": {
-    "prefix": "alx",
+  "Snippet": {
+    "prefix": "monty",
     "body": [
       "#include \"monty.h\"",
+      "/**",
+      " * ${1:func} - ${2:desc}",
+      " * @${3:n}: ${4:desc}",
+      " */",
+      "",
+      ""
+    ],
+    "description": "ALX Snippet"
+  },
+	"Description": {
+    "prefix": "desc",
+    "body": [
       "/**",
       " * ${1:func} - ${2:desc}",
       " * @${3:n}: ${4:desc}",

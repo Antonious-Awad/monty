@@ -10,6 +10,8 @@
 int main(int argc, char const *argv[])
 {
 	FILE *file;
+	ssize_t size;
+	int line;
 
 	if (argc != 2)
 	{
@@ -18,5 +20,12 @@ int main(int argc, char const *argv[])
 	}
 
 	file = read_file(argv[1]);
+	init_stack_data();
+
+	while (getline(&data_per_line, size, file) != -1)
+	{
+		line++;
+		tokenize();
+	}
 	return (0);
 }
