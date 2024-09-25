@@ -37,5 +37,6 @@ int main(int argc, char **argv)
 	free(buff);
 	fclose(file);
 	free_dbl_list(STACK.top);
+	free_dbl_ptr(command);
 	return (0);
 }
