@@ -34,5 +34,8 @@ int main(int argc, char **argv)
 		if (command[0])
 			run_command(line);
 	}
+	free(buff);
+	fclose(file);
+	free_dbl_list(STACK.top);
 	return (0);
 }
