@@ -13,7 +13,7 @@ FILE *read_file(char *name)
 
 	if (!data)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't open file <file>");
+		dprintf(STDERR_FILENO, "Error: Can't open file <file>\n");
 		exit(EXIT_FAILURE);
 	}
 
