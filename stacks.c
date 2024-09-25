@@ -76,3 +76,26 @@ void pint(stack_t **stack, unsigned int line_number)
 	}
 	printf("%d\n", (*stack)->n);
 }
+
+/**
+ * pop - push to a stack
+ * @stack: stack pointer
+ * @line_number: number of line
+ */
+
+void pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *curr = *stack;
+
+	if (!*stack)
+	{
+		dprintf(STDERR_FILENO, "L%d: can't pop an empty stack\n", line_number);
+		fclose(STACK.stream);
+		free(STACK.buff);
+		exit(EXIT_FAILURE);
+	}
+
+	curr = curr->next;
+	free(*stack);
+	STACK.top = curr;
+}
