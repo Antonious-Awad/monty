@@ -7,10 +7,10 @@
 
 void init_stack(FILE *file)
 {
-	STACK.buff = NULL;
 	STACK.top = NULL;
-	STACK.command = NULL;
 	STACK.stream = file;
+	STACK.buff = NULL;
+	STACK.command = NULL;
 }
 
 /**

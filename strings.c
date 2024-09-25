@@ -34,7 +34,7 @@ int is_digit(char *str)
 
 	for (; str[i]; i++)
 	{
-		if (!isdigit(str[i]))
+		if (isdigit(str[i]) == 0)
 			return (0);
 	}
 	return (1);

@@ -30,7 +30,10 @@ void run_command(int line)
 
 void (*get_operation(char *command))(stack_t **stack, unsigned int line_number)
 {
-	instruction_t instr[] = {{"push", push}, {"pall", pall}, {NULL, NULL}};
+	instruction_t instr[] = {
+			{"push", push},
+			{"pall", pall},
+			{NULL, NULL}};
 	int i;
 
 	for (i = 0; instr[i].opcode; i++)

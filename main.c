@@ -13,8 +13,7 @@ int main(int argc, char **argv)
 	FILE *file;
 	size_t size;
 	int line;
-	char *command[2] = {NULL, NULL};
-	char *buff;
+	char *buff = NULL, *command[2];
 
 	if (argc != 2)
 	{
