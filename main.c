@@ -28,9 +28,8 @@ int main(int argc, char **argv)
 	while (getline(&buff, &size, file) != -1)
 	{
 		STACK.buff = buff;
+		reset_command(command);
 		line++;
-		command[0] = NULL;
-		command[1] = NULL;
 		tokenize(buff, command);
 		STACK.command = command;
 		if (command[0])

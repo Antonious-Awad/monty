@@ -65,6 +65,7 @@ FILE *read_file(char *name);
 /* strings */
 void tokenize(char *buff, char **command);
 int is_digit(char *str);
+void reset_command(char **command);
 
 /* Data Structures  */
 void init_stack_data(FILE *stream);

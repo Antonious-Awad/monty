@@ -7,12 +7,12 @@
 
 void tokenize(char *buff, char **command)
 {
-	char *token, *data = buff;
+	char *token, *str = buff;
 	int i = 0;
 
-	for (; i < 2; i++)
+	for (; i < 2; str = NULL, i++)
 	{
-		token = strtok(i == 0 ? data : NULL, " \n\t");
+		token = strtok(str, " \t\n");
 		if (!token || token[0] == '#')
 			return;
 		command[i] = token;
@@ -38,4 +38,16 @@ int is_digit(char *str)
 			return (0);
 	}
 	return (1);
+}
+
+/**
+ * reset_command - resets command values to NULL
+ * @command: command
+ */
+void reset_command(char **command)
+{
+	int i;
+
+	for (i = 0; i < 2; i++)
+		command[i] = NULL;
 }
