@@ -72,6 +72,7 @@ void init_stack(FILE *file);
 void init_stack_data(FILE *stream);
 void free_dbl_list(stack_t *head);
 void free_stack_data(void);
+void free_dbl_ptr(char **ptr);
 void push(stack_t **stack, unsigned int line_number);
 
 /* Monty */
