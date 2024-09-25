@@ -14,7 +14,7 @@
         "-std=gnu89",
         "*.c",
         "-o",
-        "${fileDirname}/${fileBasenameNoExtension}"
+        "monty"
       ],
       "options": {
         "cwd": "${fileDirname}"

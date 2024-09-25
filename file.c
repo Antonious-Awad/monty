@@ -19,22 +19,3 @@ FILE *read_file(char *name)
 
 	return (data);
 }
-/**
- * tokenize - turns the buffer into an array of strings
- * @buff: line buffer
- * @command: Array of strings to store tokens in
- */
-
-void tokenize(char *buff, char **command)
-{
-	char *token, *data = buff;
-	int i = 0;
-
-	for (; i < 2; i++)
-	{
-		token = strtok(data, " \n\t");
-		if (!token || token[0] == '#')
-			return;
-		command[i] = token;
-	}
-}

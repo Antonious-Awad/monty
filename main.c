@@ -31,8 +31,8 @@ int main(int argc, char **argv)
 		line++;
 		tokenize(buff, command);
 		STACK.command = command;
-
-		printf("%d: %s\n", line, buff);
+		if (command[0])
+			run_command(line);
 	}
 	return (0);
 }

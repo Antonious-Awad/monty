@@ -9,6 +9,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <string.h>
+#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -60,9 +61,21 @@ extern sv STACK;
 
 /* File Operations */
 FILE *read_file(char *name);
+
+/* strings */
 void tokenize(char *buff, char **command);
+int is_digit(char *str);
 
 /* Data Structures  */
 void init_stack_data(FILE *stream);
+void free_dbl_list(stack_t *head);
+void free_stack_data(void);
+void push(stack_t **stack, unsigned int line_number);
+
+/* Monty */
+void run_command(int line);
+void (*get_operation(char
+												 *command))(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
 
 #endif
