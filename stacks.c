@@ -99,3 +99,33 @@ void pop(stack_t **stack, unsigned int line_number)
 	free(*stack);
 	STACK.top = curr;
 }
+
+/**
+ * swap - swap top 2 elements of a stack
+ * @stack: stack pointer
+ * @line_number: number of line
+ */
+
+void swap(stack_t **stack, unsigned int line_number)
+{
+	stack_t *curr_top, *new_top;
+
+	if (!*stack || !(*stack)->next)
+	{
+		dprintf(2, "L%d: can't swap, stack too short\n", line_number);
+		fclose(STACK.stream);
+		free(STACK.buff);
+		free_dbl_list(STACK.top);
+		exit(EXIT_FAILURE);
+	}
+
+	curr_top = *stack;
+	new_top = (*stack)->next;
+
+	curr_top->next = new_top->next;
+	curr_top->prev = new_top;
+
+	new_top->next = curr_top;
+	new_top->prev = NULL;
+	STACK.top = new_top;
+}
