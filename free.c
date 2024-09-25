@@ -24,5 +24,6 @@ void free_stack_data(void)
 {
 	free(STACK.buff);
 	fclose(STACK.stream);
-	free(STACK.top);
+	free_dbl_list(STACK.top);
+	free(STACK.command);
 }
