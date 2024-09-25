@@ -8,11 +8,11 @@ void free_dbl_list(stack_t *head)
 {
 	stack_t *curr = head;
 
-	while (!head)
+	while (curr)
 	{
-		curr = head;
-		head = head->next;
-		free(curr);
+		curr = curr->next;
+		free(head);
+		head = curr;
 	}
 }
 
@@ -25,5 +25,4 @@ void free_stack_data(void)
 	free(STACK.buff);
 	fclose(STACK.stream);
 	free_dbl_list(STACK.top);
-	free(STACK.command);
 }

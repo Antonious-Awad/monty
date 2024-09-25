@@ -1,4 +1,18 @@
 #include "monty.h"
+
+/**
+ * init_stack - initialize stack global variable
+ * @file: file stream
+ */
+
+void init_stack(FILE *file)
+{
+	STACK.buff = NULL;
+	STACK.top = NULL;
+	STACK.command = NULL;
+	STACK.stream = file;
+}
+
 /**
  * push - push to a stack
  * @stack: stack pointer

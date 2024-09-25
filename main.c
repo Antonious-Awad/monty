@@ -1,6 +1,6 @@
 #include "monty.h"
 
-sv STACK = {NULL, NULL, NULL, NULL};
+sv STACK;
 /**
  * main - monty entry point
  * @argc: argument count
@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 	}
 
 	file = read_file(argv[1]);
-	STACK.stream = file;
+	init_stack(file);
 
 	while (getline(&buff, &size, file) != -1)
 	{

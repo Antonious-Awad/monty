@@ -68,6 +68,7 @@ int is_digit(char *str);
 void reset_command(char **command);
 
 /* Data Structures  */
+void init_stack(FILE *file);
 void init_stack_data(FILE *stream);
 void free_dbl_list(stack_t *head);
 void free_stack_data(void);

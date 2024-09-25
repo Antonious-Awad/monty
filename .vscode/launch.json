@@ -6,7 +6,7 @@
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/monty",
-      "args": ["bytecodes/00.m"],
+      "args": ["bytecodes/x.m"],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],
