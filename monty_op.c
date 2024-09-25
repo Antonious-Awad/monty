@@ -33,6 +33,7 @@ void (*get_operation(char *command))(stack_t **stack, unsigned int line_number)
 	instruction_t instr[] = {
 			{"push", push},
 			{"pall", pall},
+			{"pint", pint},
 			{NULL, NULL}};
 	int i;
 

@@ -74,6 +74,7 @@ void free_dbl_list(stack_t *head);
 void free_stack_data(void);
 void free_dbl_ptr(char **ptr);
 void push(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
 
 /* Monty */
 void run_command(int line);

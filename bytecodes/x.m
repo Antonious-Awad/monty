@@ -1,1 +1,1 @@
-push x
+pall

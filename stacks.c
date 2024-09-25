@@ -58,3 +58,21 @@ void push(stack_t **stack, unsigned int line_number)
 		STACK.top = new;
 	}
 }
+
+/**
+ * pint - returns the top element in the stack
+ * @stack: stack pointer
+ * @line_number: number of line
+ */
+
+void pint(stack_t **stack, unsigned int line_number)
+{
+	if (!*stack)
+	{
+		dprintf(STDERR_FILENO, "L%d: can't pint, stack empty\n", line_number);
+		fclose(STACK.stream);
+		free(STACK.buff);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", (*stack)->n);
+}
