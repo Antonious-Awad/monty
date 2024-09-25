@@ -29,6 +29,8 @@ int main(int argc, char **argv)
 	{
 		STACK.buff = buff;
 		line++;
+		command[0] = NULL;
+		command[1] = NULL;
 		tokenize(buff, command);
 		STACK.command = command;
 		if (command[0])

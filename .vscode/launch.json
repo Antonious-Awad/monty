@@ -7,7 +7,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/monty",
       "args": ["bytecodes/00.m"],
-      "stopAtEntry": true,
+      "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],
       "externalConsole": false,
