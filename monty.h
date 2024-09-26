@@ -66,6 +66,8 @@ FILE *read_file(char *name);
 void tokenize(char *buff, char **command);
 int is_digit(char *str);
 void reset_command(char **command);
+void pchar(stack_t **stack, unsigned int line_number);
+void pstr(stack_t **stack, unsigned int line_number);
 
 /* Data Structures  */
 void init_stack(FILE *file);

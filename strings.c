@@ -51,3 +51,36 @@ void reset_command(char **command)
 	for (i = 0; i < 2; i++)
 		command[i] = NULL;
 }
+
+/**
+ * pchar - prints the character at the top of the stack
+ * @stack: stack pointer
+ * @line_number: number of line
+ */
+
+void pchar(stack_t **stack, unsigned int line_number)
+{
+	int ch;
+
+	if (!*stack)
+	{
+		dprintf(2, "L%d: can't pchar, stack empty\n", line_number);
+		fclose(STACK.stream);
+		free(STACK.buff);
+		free_dbl_list(STACK.top);
+		exit(EXIT_FAILURE);
+	}
+
+	ch = (*stack)->n;
+
+	if (ch < 0 || ch > 127)
+	{
+		dprintf(2, "L%d: can't pchar, value out of range\n", line_number);
+		fclose(STACK.stream);
+		free(STACK.buff);
+		free_dbl_list(STACK.top);
+		exit(EXIT_FAILURE);
+	}
+
+	printf("%c\n", ch);
+}

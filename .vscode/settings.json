@@ -15,6 +15,7 @@
     "dnodeint",
     "listint",
     "nodeint",
+    "pchar",
     "strtow",
     "wildcmp"
   ]
