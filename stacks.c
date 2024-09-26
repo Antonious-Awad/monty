@@ -11,6 +11,7 @@ void init_stack(FILE *file)
 	STACK.stream = file;
 	STACK.buff = NULL;
 	STACK.command = NULL;
+	STACK.is_queue = 0;
 }
 
 /**
@@ -26,6 +27,12 @@ void push(stack_t **stack, unsigned int line_number)
 	stack_t *new;
 
 	(void)stack;
+
+	if (STACK.is_queue)
+	{
+		queue_push(line_number);
+		return;
+	}
 	new = malloc(sizeof(stack_t));
 	if (!new)
 	{
@@ -33,7 +40,6 @@ void push(stack_t **stack, unsigned int line_number)
 		free_stack_data();
 		exit(EXIT_FAILURE);
 	}
-
 	if (command[1] && is_digit(command[1]))
 		n = atoi(command[1]);
 	else
@@ -43,7 +49,6 @@ void push(stack_t **stack, unsigned int line_number)
 		free(new);
 		exit(EXIT_FAILURE);
 	}
-
 	new->n = n;
 	new->prev = NULL;
 	if (!STACK.top)

@@ -47,6 +47,8 @@ typedef struct instruction_s
  * @buff: buffer for each line per file
  * @command: array consisting of command and its argument
  * @stream: file stream
+ * @is_queue: is the stack converted to a queue or not
+ * @front: front of the queue
  */
 
 typedef struct stack_vars
@@ -55,6 +57,8 @@ typedef struct stack_vars
 	char *buff;
 	char **command;
 	FILE *stream;
+	int is_queue;
+	stack_t *front;
 } sv;
 
 extern sv STACK;
@@ -79,6 +83,7 @@ void push(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
+void queue_push(int line_number);
 
 /* Mathematical operations */
 void add(stack_t **stack, unsigned int line_number);
@@ -96,7 +101,8 @@ void run_command(int line);
 void (*get_operation(char
 												 *command))(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
-
 void nop(stack_t **stack, unsigned int line_number);
+void convert_stack(stack_t **stack, unsigned int line_number);
+void convert_queue(stack_t **stack, unsigned int line_number);
 
 #endif
