@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 {
 	FILE *file;
 	size_t size;
-	int line;
+	int line = 0;
 	char *buff = NULL, *command[2];
 
 	if (argc != 2)
