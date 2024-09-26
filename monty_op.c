@@ -45,7 +45,7 @@ void (*get_operation(char *command))(stack_t **stack, unsigned int line_number)
 			{"pchar", pchar},
 			{"pstr", pstr},
 			{"rotl", rotl},
-			{"rotr", NULL},
+			{"rotr", rotr},
 			{NULL, NULL}};
 	int i;
 
