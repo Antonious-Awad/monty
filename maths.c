@@ -48,7 +48,7 @@ void sub(stack_t **stack, unsigned int line_number)
 
 	top = *stack;
 	below_top = (*stack)->next;
-	res = top->n - below_top->n;
+	res = below_top->n - top->n;
 	below_top->n = res;
 	free(top);
 	below_top->prev = NULL;
@@ -84,7 +84,7 @@ void divide(stack_t **stack, unsigned int line_number)
 		free_dbl_list(STACK.top);
 		exit(EXIT_FAILURE);
 	}
-	res = top->n / below_top->n;
+	res = below_top->n / top->n;
 	below_top->n = res;
 	free(top);
 	below_top->prev = NULL;
@@ -148,7 +148,7 @@ void mod(stack_t **stack, unsigned int line_number)
 		free_dbl_list(STACK.top);
 		exit(EXIT_FAILURE);
 	}
-	res = top->n % below_top->n;
+	res = below_top->n % top->n;
 	below_top->n = res;
 	free(top);
 	below_top->prev = NULL;
