@@ -56,11 +56,11 @@ void sub(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * div - divides top 2 elements of a stack
+ * divide - divides top 2 elements of a stack
  * @stack: stack pointer
  * @line_number: number of line
  */
-void div(stack_t **stack, unsigned int line_number)
+void divide(stack_t **stack, unsigned int line_number)
 {
 	int res;
 	stack_t *top, *below_top;
