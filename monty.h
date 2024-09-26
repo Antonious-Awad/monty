@@ -87,6 +87,10 @@ void mul(stack_t **stack, unsigned int line_number);
 void divide(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
 
+/* Sorting */
+void rotl(stack_t **stack, unsigned int line_number);
+void rotr(stack_t **stack, unsigned int line_number);
+
 /* Monty */
 void run_command(int line);
 void (*get_operation(char
